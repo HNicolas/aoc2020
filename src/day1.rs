@@ -10,12 +10,12 @@ pub fn run() {
     for number in numbers {
         let comp = 2020 - number;
         if first_set.contains(&comp) {
-            println!("day 1 first solution : {}", number * comp);
+            println!("day 1 solution 1 : {}", number * comp);
             first_found = true;
         }
 
         if second_map.contains_key(&comp) {
-            println!("day 1 second solution : {}", number * second_map.get(&comp).unwrap());
+            println!("day 1 solution 2 : {}", number * second_map.get(&comp).unwrap());
             second_found = true;
         }
 
