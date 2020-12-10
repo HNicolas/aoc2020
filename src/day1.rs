@@ -1,6 +1,6 @@
 pub fn run() {
     let contents = std::fs::read_to_string("inputs/day1").unwrap();
-    let numbers = contents.lines().map(|s| { s.parse::<u32>().unwrap() });
+    let numbers = contents.lines().map(|s| s.parse::<u32>().unwrap());
 
     let mut first_set = std::collections::HashSet::new();
     let mut second_map = std::collections::HashMap::new();
@@ -15,7 +15,10 @@ pub fn run() {
         }
 
         if second_map.contains_key(&comp) {
-            println!("day 1 solution 2 : {}", number * second_map.get(&comp).unwrap());
+            println!(
+                "day 1 solution 2 : {}",
+                number * second_map.get(&comp).unwrap()
+            );
             second_found = true;
         }
 

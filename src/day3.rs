@@ -25,7 +25,10 @@ pub fn run() {
     let slope4 = get_trees_for_slope(&map, 7, 1);
     let slope5 = get_trees_for_slope(&map, 1, 2);
     println!("day 3 solution 1 : {}", slope2);
-    println!("day 3 solution 2 : {}", slope1 * slope2 * slope3 * slope4 * slope5); 
+    println!(
+        "day 3 solution 2 : {}",
+        slope1 * slope2 * slope3 * slope4 * slope5
+    );
 }
 
 #[cfg(test)]
