@@ -229,14 +229,14 @@ impl Layout {
         })
     }
 
-    fn print(&self) {
-        for row in &self.layout {
-            for seat in row {
-                print!("{}", seat);
-            }
-            println!("");
-        }
-    }
+    // fn print(&self) {
+    //     for row in &self.layout {
+    //         for seat in row {
+    //             print!("{}", seat);
+    //         }
+    //         println!("");
+    //     }
+    // }
 }
 
 fn get_safe_range(value: usize, min: usize, max: usize) -> RangeInclusive<usize> {
