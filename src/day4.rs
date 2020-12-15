@@ -180,10 +180,19 @@ fn solve_2(passports: &Vec<Passport>) -> u32 {
 }
 
 pub fn run() {
+    let timer = std::time::Instant::now();
     let input = std::fs::read_to_string("inputs/day4").unwrap();
     let passports = parse_input(&input);
-    println!("day 4 solution 1 : {}", solve_1(&passports));
-    println!("day 4 solution 2 : {}", solve_2(&passports));
+    println!(
+        "day 4 solution 1 : {}, {}us",
+        solve_1(&passports),
+        timer.elapsed().as_micros()
+    );
+    println!(
+        "day 4 solution 2 : {}, {}us",
+        solve_2(&passports),
+        timer.elapsed().as_micros()
+    );
 }
 
 #[cfg(test)]

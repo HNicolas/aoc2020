@@ -76,10 +76,19 @@ fn solve_2(instructions: &Vec<Instruction>) -> i32 {
 }
 
 pub fn run() {
+    let timer = std::time::Instant::now();
     let input = std::fs::read_to_string("inputs/day8").unwrap();
     let instructions = parse_input(&input);
-    println!("day 8 solution 1 : {}", solve_1(&instructions));
-    println!("day 8 solution 2 : {}", solve_2(&instructions));
+    println!(
+        "day 8 solution 1 : {}, {}us",
+        solve_1(&instructions),
+        timer.elapsed().as_micros()
+    );
+    println!(
+        "day 8 solution 2 : {}, {}us",
+        solve_2(&instructions),
+        timer.elapsed().as_micros()
+    );
 }
 
 #[cfg(test)]

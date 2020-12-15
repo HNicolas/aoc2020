@@ -17,6 +17,7 @@ fn get_trees_for_slope(map: &Vec<Vec<char>>, right: u8, down: u8) -> u32 {
 }
 
 pub fn run() {
+    let timer = std::time::Instant::now();
     let input = std::fs::read_to_string("inputs/day3").unwrap();
     let map = parse_input(&input);
     let slope1 = get_trees_for_slope(&map, 1, 1);
@@ -24,10 +25,15 @@ pub fn run() {
     let slope3 = get_trees_for_slope(&map, 5, 1);
     let slope4 = get_trees_for_slope(&map, 7, 1);
     let slope5 = get_trees_for_slope(&map, 1, 2);
-    println!("day 3 solution 1 : {}", slope2);
     println!(
-        "day 3 solution 2 : {}",
-        slope1 * slope2 * slope3 * slope4 * slope5
+        "day 3 solution 1 : {}, {}us",
+        slope2,
+        timer.elapsed().as_micros()
+    );
+    println!(
+        "day 3 solution 2 : {}, {}us",
+        slope1 * slope2 * slope3 * slope4 * slope5,
+        timer.elapsed().as_micros()
     );
 }
 

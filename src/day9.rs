@@ -49,17 +49,26 @@ fn solve_2(numbers: &Vec<i64>, invalid_number: i64) -> i64 {
             sum += numbers[end];
         }
     }
-    let min = numbers[start..=end].iter().min().unwrap(); 
-    let max = numbers[start..=end].iter().max().unwrap(); 
+    let min = numbers[start..=end].iter().min().unwrap();
+    let max = numbers[start..=end].iter().max().unwrap();
     min + max
 }
 
 pub fn run() {
+    let timer = std::time::Instant::now();
     let input = std::fs::read_to_string("inputs/day9").unwrap();
     let numbers = parse_input(&input);
     let invalid_number = solve_1(&numbers, 25);
-    println!("day 9 solution 1 : {}", invalid_number);
-    println!("day 9 solution 2 : {}", solve_2(&numbers, invalid_number));
+    println!(
+        "day 9 solution 1 : {}, {}us",
+        invalid_number,
+        timer.elapsed().as_micros()
+    );
+    println!(
+        "day 9 solution 2 : {}, {}us",
+        solve_2(&numbers, invalid_number),
+        timer.elapsed().as_micros()
+    );
 }
 
 #[cfg(test)]

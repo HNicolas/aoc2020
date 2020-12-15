@@ -78,10 +78,19 @@ fn lcm(a: u64, b: u64) -> u64 {
 }
 
 pub fn run() {
+    let timer = std::time::Instant::now();
     let input = std::fs::read_to_string("inputs/day13").unwrap();
     let problem = Problem::new(&input);
-    println!("day 13 solution 1 : {}", problem.solve_1());
-    println!("day 13 solution 2 : {}", problem.solve_2());
+    println!(
+        "day 13 solution 1 : {}, {}us",
+        problem.solve_1(),
+        timer.elapsed().as_micros()
+    );
+    println!(
+        "day 13 solution 2 : {}, {}us",
+        problem.solve_2(),
+        timer.elapsed().as_micros()
+    );
 }
 
 #[cfg(test)]

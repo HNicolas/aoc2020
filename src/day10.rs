@@ -46,10 +46,19 @@ fn parse_input(input: &str) -> Vec<u8> {
 }
 
 pub fn run() {
+    let timer = std::time::Instant::now();
     let input = std::fs::read_to_string("inputs/day10").unwrap();
     let sorted_values = parse_input(&input);
-    println!("day 10 solution 1 : {}", solve_1(&sorted_values));
-    println!("day 10 solution 2 : {}", solve_2(&sorted_values));
+    println!(
+        "day 10 solution 1 : {}, {}us",
+        solve_1(&sorted_values),
+        timer.elapsed().as_micros()
+    );
+    println!(
+        "day 10 solution 2 : {}, {}us",
+        solve_2(&sorted_values),
+        timer.elapsed().as_micros()
+    );
 }
 
 #[cfg(test)]

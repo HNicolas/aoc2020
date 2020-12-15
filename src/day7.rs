@@ -86,12 +86,18 @@ fn solve_2(bag_map: &HashMap<&str, Bag>, bag_color: &str) -> usize {
 }
 
 pub fn run() {
+    let timer = std::time::Instant::now();
     let input = std::fs::read_to_string("inputs/day7").unwrap();
     let parsed_input = parse_input(&input);
-    println!("day 7 solution 1 : {}", solve_1(&parsed_input));
     println!(
-        "day 7 solution 2 : {}",
-        solve_2(&parsed_input, "shiny gold")
+        "day 7 solution 1 : {}, {}us",
+        solve_1(&parsed_input),
+        timer.elapsed().as_micros()
+    );
+    println!(
+        "day 7 solution 2 : {}, {}us",
+        solve_2(&parsed_input, "shiny gold"),
+        timer.elapsed().as_micros()
     );
 }
 

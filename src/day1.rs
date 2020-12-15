@@ -1,4 +1,5 @@
 pub fn run() {
+    let timer = std::time::Instant::now();
     let contents = std::fs::read_to_string("inputs/day1").unwrap();
     let numbers = contents.lines().map(|s| s.parse::<u32>().unwrap());
 
@@ -10,14 +11,19 @@ pub fn run() {
     for number in numbers {
         let comp = 2020 - number;
         if first_set.contains(&comp) {
-            println!("day 1 solution 1 : {}", number * comp);
+            println!(
+                "day 1 solution 1 : {}, {}us",
+                number * comp,
+                timer.elapsed().as_micros()
+            );
             first_found = true;
         }
 
         if second_map.contains_key(&comp) {
             println!(
-                "day 1 solution 2 : {}",
-                number * second_map.get(&comp).unwrap()
+                "day 1 solution 2 : {}, {}us",
+                number * second_map.get(&comp).unwrap(),
+                timer.elapsed().as_micros()
             );
             second_found = true;
         }

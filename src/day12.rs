@@ -113,10 +113,19 @@ fn rotate(coordinates: (i32, i32), theta: f32) -> (i32, i32) {
 }
 
 pub fn run() {
+    let timer = std::time::Instant::now();
     let input = std::fs::read_to_string("inputs/day12").unwrap();
     let instruction = Instruction::new(&input);
-    println!("day 12 solution 1 : {}", instruction.solve_1());
-    println!("day 12 solution 2 : {}", instruction.solve_2());
+    println!(
+        "day 12 solution 1 : {}, {}us",
+        instruction.solve_1(),
+        timer.elapsed().as_micros()
+    );
+    println!(
+        "day 12 solution 2 : {}, {}us",
+        instruction.solve_2(),
+        timer.elapsed().as_micros()
+    );
 }
 
 #[cfg(test)]

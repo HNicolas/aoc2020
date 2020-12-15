@@ -246,13 +246,22 @@ fn get_safe_range(value: usize, min: usize, max: usize) -> RangeInclusive<usize>
 }
 
 pub fn run() {
+    let timer = std::time::Instant::now();
     let input = std::fs::read_to_string("inputs/day11").unwrap();
     let mut layout = Layout::new(&input);
     let mut layout_2 = layout.clone();
     while layout.next_1() {}
-    println!("day 11 solution 1 : {}", layout.count_occupied());
+    println!(
+        "day 11 solution 1 : {}, {}us",
+        layout.count_occupied(),
+        timer.elapsed().as_micros()
+    );
     while layout_2.next_2() {}
-    println!("day 11 solution 2 : {}", layout_2.count_occupied());
+    println!(
+        "day 11 solution 2 : {}, {}us",
+        layout_2.count_occupied(),
+        timer.elapsed().as_micros()
+    );
 }
 
 #[cfg(test)]

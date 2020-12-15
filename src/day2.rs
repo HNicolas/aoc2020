@@ -60,10 +60,11 @@ fn solve_2(policies: &Vec<Policy>) -> u32 {
 }
 
 pub fn run() {
+    let timer = std::time::Instant::now();
     let input = std::fs::read_to_string("inputs/day2").unwrap();
     let policies = parse_input(&input);
-    println!("day 2 solution 1 : {}", solve_1(&policies));
-    println!("day 2 solution 2 : {}", solve_2(&policies));
+    println!("day 2 solution 1 : {}, {}us", solve_1(&policies), timer.elapsed().as_micros());
+    println!("day 2 solution 2 : {}, {}us", solve_2(&policies), timer.elapsed().as_micros());
 }
 
 #[cfg(test)]

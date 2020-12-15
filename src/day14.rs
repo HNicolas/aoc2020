@@ -107,9 +107,18 @@ fn solve_2(input: &str) -> u64 {
 }
 
 pub fn run() {
+    let timer = std::time::Instant::now();
     let input = std::fs::read_to_string("inputs/day14").unwrap();
-    println!("day 14 solution 1 : {}", solve_1(&input));
-    println!("day 14 solution 2 : {}", solve_2(&input));
+    println!(
+        "day 14 solution 1 : {}, {}us",
+        solve_1(&input),
+        timer.elapsed().as_micros()
+    );
+    println!(
+        "day 14 solution 2 : {}, {}us",
+        solve_2(&input),
+        timer.elapsed().as_micros()
+    );
 }
 
 #[cfg(test)]
