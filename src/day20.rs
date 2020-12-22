@@ -303,8 +303,8 @@ fn solve_2(mut tile: Tile) -> u32 {
             .fold(0, |acc2, curr2| if *curr2 == '#' { acc2 + 1 } else { acc2 })
     });
     let mut sea_monsters = 0;
-    'transform: for f in 0..2 {
-        for r in 0..4 {
+    'transform: for _ in 0..2 {
+        for _ in 0..4 {
             sea_monsters = tile.count_sea_monsters();
             if sea_monsters != 0 {
                 break 'transform;

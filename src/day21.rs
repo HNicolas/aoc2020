@@ -52,7 +52,7 @@ impl<'a> IngredientList<'a> {
         let mut found_allergens: Vec<(&str, &str)> = self
             .possible_allergens
             .iter()
-            .filter(|(allergen, ingredients)| ingredients.len() == 1)
+            .filter(|(_, ingredients)| ingredients.len() == 1)
             .map(|(allergen, ingredient)| (*allergen, *ingredient.iter().next().unwrap()))
             .collect::<Vec<_>>();
         while found_allergens.len() > 0 {
@@ -141,6 +141,6 @@ trh fvjkl sbzzf mxmxvkd (contains dairy)
 sqjhc fvjkl (contains soy)
 sqjhc mxmxvkd sbzzf (contains fish)";
         let mut list = IngredientList::new(&input);
-        assert_eq!(solve_2(&mut list), "");
+        assert_eq!(solve_2(&mut list), "mxmxvkd,sqjhc,fvjkl");
     }
 }

@@ -1,6 +1,6 @@
 use std::collections::HashMap;
 
-fn solve(input: &str, nth: usize) -> u32 {
+fn _solve(input: &str, nth: usize) -> u32 {
     let numbers = input
         .split(',')
         .map(|s| s.parse::<u32>().unwrap())
@@ -65,7 +65,7 @@ mod tests {
     #[test]
     fn test_solution_1() {
         let input = "3,1,2";
-        assert_eq!(solve(&input, 2020), 1836);
+        assert_eq!(_solve(&input, 2020), 1836);
     }
 
     #[test]
