@@ -9,7 +9,7 @@ impl Operator {
         match input.chars().next() {
             Some('*') => (Self::Mul, &input[2..]),
             Some('+') => (Self::Add, &input[2..]),
-            _ => panic!(format!("invalid operator {}", input)),
+            _ => panic!("invalid operator {}", input),
         }
     }
 }

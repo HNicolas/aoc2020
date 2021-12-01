@@ -53,7 +53,7 @@ impl Layout {
                     'L' => SeatState::Empty,
                     '#' => SeatState::Occupied,
                     '.' => SeatState::NoSeat,
-                    _ => panic!(format!("invalid char in layout : {}", c)),
+                    _ => panic!("invalid char in layout : {}", c),
                 };
                 row.push(seat);
             }
